@@ -1,0 +1,29 @@
+  <h2> User to Regions <h2>
+<%= form_for :user_region, url: user_regions_path  do |f| %>
+  
+
+  <div class="form-group">
+     <label class="col-sm-2 control-label">User name:</label>
+      <div class="col-sm-7  inputGroupContainer">
+        <%= f.select(:user_id, User.all.collect {|u| [u.first_name, u.id]},{:prompt => 'User name '},:class=>"form-control") %>
+      </div>
+  </div><br><br>
+
+  
+
+  <div class="form-group">
+     <label class="col-sm-2 control-label">Region:</label>
+      <div class="col-sm-7  inputGroupContainer">
+        <%= f.select(:region_id, Region.all.collect {|u| [u.region_name, u.id]},{:prompt => 'Select '},:class=>"form-control") %>
+       </div>
+  </div><br><br>
+
+  <p>
+    <%= f.submit 'save' %>
+  </p>
+
+  <p>
+    <%= link_to 'Back', regions_path, class: "btn btn-info" %>
+  </p>
+<% end %>
+

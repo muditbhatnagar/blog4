@@ -1,0 +1,20 @@
+<h1>Listing Region</h1>
+ <%= link_to 'New Region', new_user_path %>
+<table>
+  <tr>
+    <th>Region</th>  
+  </tr>
+ 
+  <% @region.each do |region|%>
+    <tr>
+      <td><%= region.region_name %></td>
+      
+      <td><%= link_to 'Edit', edit_region_path(region), class: "btn btn-primary" %></td>
+       <td><%= link_to 'Show', region_path(region), class: "btn btn-info" %></td>
+       <td><%= link_to 'Destroy', region_path(region),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+    </tr>
+  <% end %>
+</table>
+

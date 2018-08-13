@@ -1,0 +1,46 @@
+<h1> Add Place <h1>
+<%= form_for :place, url: places_path  do |f| %>
+
+ <% if @place.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@place.errors.count, "error") %> prohibited
+        this place from being saved:
+      </h2>
+      <ul>
+        <% @place.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <br>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Place_Name:</label>
+    <div class="col-sm-2  inputGroupContainer">
+      <%= f.text_field :place_name,:class=>"form-control",:placeholder => "Place name" %>
+    </div>
+  
+ 
+  
+
+<div class="form-group">
+    <label class="col-sm-3 control-label">Node_Name:</label>
+    <div class="col-sm-2  inputGroupContainer">
+      <%= f.text_field :node,:class=>"form-control",:placeholder => "Node name" %>
+    </div>
+  </div><br><br><br>
+
+  <div class="form-group">
+        <label class="col-sm-2 control-label">Company:</label>
+        <div class="col-sm-7  inputGroupContainer">
+         <%= f.select(:company_id, Company.all.collect {|u| [u.company, u.id]},{},:prompt => 'Select Company',:class=>"form-control") %>
+          </div>
+        </div><br><br>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

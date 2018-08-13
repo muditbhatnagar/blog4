@@ -1,0 +1,13 @@
+<h2> Add a City <h2>
+<%= form_for :city, url: cities_path do |f| %>
+  <p>
+    <%= f.label :City_name %><br>
+    <%= f.text_field :city_name %>
+  </p>
+ 
+  
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

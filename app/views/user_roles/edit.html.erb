@@ -1,0 +1,29 @@
+<h1>Editing User</h1>
+ 
+<%= form_for :user_role, url: user_role_path(@user_role), method: :patch do |f| %>
+ 
+  <% if @user_role.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user_role.errors.count, "error") %> prohibited
+        this user_role from being saved:
+      </h2>
+      <ul>
+        <% @user_role.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :Role_Name %><br>
+    <%= f.text_field :role_name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 

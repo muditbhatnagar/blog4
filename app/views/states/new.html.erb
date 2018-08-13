@@ -1,0 +1,13 @@
+<h2> Add a State <h2>
+<%= form_for :state, url: states_path do |f| %>
+  <p>
+    <%= f.label :state_name %><br>
+    <%= f.text_field :state_name %>
+  </p>
+ 
+  
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,30 @@
+<h1>Listing Places</h1>
+ <%= link_to 'New Place', new_place_path %>
+<table>
+  <tr>
+    <th>Place_name</th>
+    <th>Node_name</th>
+    <th>Company_name</th>
+  </tr>
+ 
+  <% @place.each do |pla| %>
+    <tr>
+   
+      <td><%= pla.place_name %></td>
+      <td><%= pla.node %></td>
+      <% if pla.company_id.present? %>
+        <td><%= pla.company.try(:company) %></td>
+      <% else %>
+        <td><p>No Company</p></td>
+      <% end %>
+      <td><%= link_to 'Show', place_path(pla), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Edit', edit_place_path(pla), class: "btn btn-info" %></td>
+       <td><%= link_to 'Destroy', place_path(pla),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+

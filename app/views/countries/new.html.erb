@@ -1,0 +1,13 @@
+<h2> Add a Country <h2>
+<%= form_for :country, url: countries_path do |f| %>
+  <p>
+    <%= f.label :Country_name %><br>
+    <%= f.text_field :country__name %>
+  </p>
+ 
+  
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

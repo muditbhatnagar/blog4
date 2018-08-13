@@ -1,0 +1,46 @@
+<h1>Editing Places</h1>
+ 
+<%= form_for :place, url: place_path(@place), method: :patch do |f| %>
+ 
+  <% if @place.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@place.errors.count, "error") %> prohibited
+        this place from being saved:
+      </h2>
+      <ul>
+        <% @place.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+   <div class="form-group">
+    <label class="col-sm-2 control-label">Place_name:</label>
+    <div class="col-sm-2  inputGroupContainer">
+      <%= f.text_field :place_name,:class=>"form-control",:placeholder => "place name" %>
+    </div><br><br><br>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Node:</label>
+    <div class="col-sm-2  inputGroupContainer">
+      <%= f.text_field :node,:class=>"form-control",:placeholder => "node" %>
+    </div><br><br><br>
+
+<div class="form-group">
+        <label class="col-sm-2 control-label">company:</label>
+        <div class="col-sm-7  inputGroupContainer">
+         <%= f.select(:company_id, Company.all.collect {|u| [u.company, u.id]},{},:prompt => 'Select Company',:class=>"form-control") %>
+
+          </div>
+        </div><br><br><br>
+ 
+ 
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 

@@ -1,0 +1,34 @@
+<h1>Editing User_Regions</h1>
+ 
+<%= form_for :user_region, url: user_region_path(@user_region), method: :patch do |f| %>
+ 
+  <% if @user_region.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user_region.errors.count, "error") %> prohibited
+        this user_region from being saved:
+      </h2>
+      <ul>
+        <% @user_region.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :User_name %><br>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :Region %><br>
+    <%= f.text_field :region_name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 

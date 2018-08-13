@@ -1,0 +1,44 @@
+<p>
+  <strong>First_name:</strong>
+  <%= @user.first_name %>
+</p>
+ 
+<p>
+  <strong>Last_name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Monthly_charge:</strong>
+  <%= @user.monthly_charge %>
+</p>
+
+
+<p>
+  <strong>Company:</strong>
+  <%= @user.company.try(:company)  %>
+</p>
+
+
+
+<p>
+  <strong>Role:</strong>
+  <%= UserRole.find(@user.role_id).role_name  %>
+</p>
+
+<p>
+  <strong>Activebit:</strong>
+  <%= @user.activebit %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+   <img src="<%= @user.image %>" style="height: 150px; width: 300px;">
+</p>
+
+<%= link_to 'Back', users_path, class: "btn btn-info" %>

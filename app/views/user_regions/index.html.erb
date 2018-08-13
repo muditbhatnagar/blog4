@@ -1,0 +1,37 @@
+<h1>Listing Regions</h1>
+ <%= link_to 'New Region', new_user_region_path %>
+<table>
+  <tr>
+    <th>User Name</th>
+    <th>Region</th>
+   
+   
+  </tr>
+ 
+  <% @user_region.each do |user_region|%>
+    <tr>
+     
+      
+
+       <td>
+        <% if user_region.user_id.present?%>
+         <%= user_region.user_region.try(:first_name)%>
+        <% end %>
+      </td>
+      
+
+       <% if user_region.region_id.present? %>
+        <td><%= @region=Region.find(user_region.region_id).region_name %></td>
+      <% else %>
+        <td><p>No Region</p></td>
+      <% end %>
+      
+      <td><%= link_to 'Edit', edit_user_region_path(user_region), class: "btn btn-primary" %></td>
+       <td><%= link_to 'Show', user_region_path(user_region), class: "btn btn-info" %></td>
+       <td><%= link_to 'Destroy', user_region_path(user_region),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+    </tr>
+  <% end %>
+</table>
+

@@ -1,0 +1,30 @@
+  <h2> Regions <h2>
+<%= form_for :region, url: regions_path  do |f| %>
+
+<% if @region.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@region.errors.count, "error") %> prohibited
+        this region from being saved:
+      </h2>
+      <ul>
+        <% @region.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+<div class="form-group">
+    <label class="col-sm-2 control-label">Region:</label>
+    <div class="col-sm-2  inputGroupContainer">
+      <%= f.text_field :region_name,:class=>"form-control",:placeholder => "Region" %>
+    </div>
+  </div><br><br>
+ 
+
+  <p>
+    <%= f.submit 'save' %>
+  </p>
+  <% end %>

@@ -1,0 +1,41 @@
+<h1>Listing Companies</h1>
+ <%= link_to 'New Company', new_company_path %>
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Postcode</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>City</th>
+  </tr>
+ 
+  <% @companies.each do |com|%>
+    <tr>
+      <td><%= com.company %></td>
+      <td><%= com.postcode %></td>
+      <td>
+        <% if com.country_id.present?%>
+         <%= com.country.try(:country__name)%>
+        <% end %>
+      </td>
+      <td>
+        <% if com.state_id.present?%>
+         <%= com.state.try(:state_name)%>
+        <% end %>
+      </td>
+      <td>
+        <% if com.city_id.present?%>
+          <%= com.city.try(:city_name)%>
+        <% end %>
+      </td>
+    
+       <td><%= link_to 'Edit', edit_company_path(com), class: "btn btn-primary" %></td>
+       <td><%= link_to 'Show', company_path(com), class: "btn btn-info" %></td>
+       <td><%= link_to 'Destroy', company_path(com),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+    </tr>
+  <% end %>
+</table>
+
+

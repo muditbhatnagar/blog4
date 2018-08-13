@@ -1,0 +1,28 @@
+
+
+<p>
+  <strong>Company:</strong>
+  <%= @company.company %>
+</p>
+ 
+<p>
+  <strong>Postcode:</strong>
+  <%= @company.postcode %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= Country.find(@company.country_id).country__name  %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= State.find(@company.country_id).state_name  %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= City.find(@company.city_id).city_name  %>
+</p>
+
+<%= link_to 'Back', companies_path, class: "btn btn-primary" %>

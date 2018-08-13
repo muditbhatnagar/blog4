@@ -1,0 +1,19 @@
+
+<h1>Listing Countries</h1>
+ <%= link_to 'New Country', new_country_path %>
+<table>
+  <tr>
+    <th>Country_name</th>
+  </tr>
+ 
+  <% @country.each do |country| %>
+    <tr>
+      <td><%= country.country__name %></td>
+      <td><%= link_to 'Edit', edit_country_path(country), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Show', country_path(country), class: "btn btn-info" %></td>
+      <td><%= link_to 'Destroy', country_path(country),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td
+    </tr>
+  <% end %>
+</table>
