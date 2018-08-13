@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+	layout "new_layout"
 	def new
 		@place = Place.new
 	end

@@ -1,4 +1,5 @@
 class CountriesController < ApplicationController
+	layout "new_layout"
 	def new
 		@country = Country.new
 	end

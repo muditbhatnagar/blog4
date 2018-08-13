@@ -1,4 +1,5 @@
 class UserRegionsController < ApplicationController
+	layout "new_layout"
 	def new
 		@user_region = UserRegion.new
 	end

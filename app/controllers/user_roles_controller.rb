@@ -1,4 +1,5 @@
 class UserRolesController < ApplicationController
+	layout "new_layout"
 	def new
 		@user_role = UserRole.new
 	end

@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+	layout "new_layout"
 	def new
 		@company = Company.new
 	end

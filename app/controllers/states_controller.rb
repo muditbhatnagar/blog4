@@ -1,4 +1,5 @@
 class StatesController < ApplicationController
+	layout "new_layout"
 	def new
 		@state = State.new
 	end

@@ -1,4 +1,5 @@
 class CitiesController < ApplicationController
+	layout "new_layout"
 	def new
 		@city = City.new
 	end

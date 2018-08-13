@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+	layout "new_layout"
 	def new
 		@user = User.new
+		#render :layout => 'new_layout', :template => 'users/new'
 	end
 
 	def create

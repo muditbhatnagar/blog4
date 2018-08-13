@@ -1,4 +1,5 @@
 class RegionsController < ApplicationController
+	layout "new_layout"
 	def new
 		@region = Region.new
 	end
