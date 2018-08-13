@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   get '/user_regions' => 'user_regions#new'
   get '/user_role' => 'user_roles#new'
   get '/region' => 'regions#new'
- 
 
   
   # The priority is based upon order of creation: first created -> highest priority.
