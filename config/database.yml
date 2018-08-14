@@ -7,13 +7,15 @@ default: &default
   database: blog4
   username: root
   password: root
-  host: localhost
 
 development:
   <<: *default
+  database: blog4_db
 
 testing:
   <<: *default
+  database: blog4_db
 
 production:
   <<: *default
+  database: blog4_db
