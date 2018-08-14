@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
+  # devise_for :users
+  devise_for :users do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   root 'home#index'
   resources :users
   post '/new_member' => "users#create"
@@ -22,6 +25,7 @@ Rails.application.routes.draw do
   get '/user_regions' => 'user_regions#new'
   get '/user_role' => 'user_roles#new'
   get '/region' => 'regions#new'
+
 
   
   # The priority is based upon order of creation: first created -> highest priority.

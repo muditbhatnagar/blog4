@@ -19,7 +19,7 @@
   </div><br><br>
 
   <p>
-    <%= f.submit 'save' %>
+    <%= f.submit 'save', class: "btn btn-info" %>
   </p>
 
   <p>
@@ -27,3 +27,25 @@
   </p>
 <% end %>
 
+
+
+ <style type="text/css">
+body{
+  background-color: lightcyan;
+  background-image: url(/assets/19.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  .dropdown-menu li:hover{
+  visibility: visible;
+  }
+  .dropdown:hover .dropdown-menu{
+    display: block;
+  }
+  .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+    background-color: #ffba98;
+  }
+ 
+</style>
