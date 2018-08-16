@@ -5,11 +5,10 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-   validates :company_id, presence: true
-   validates :role_id, presence: true
-   validates :first_name, presence: true
-   validates :first_name, uniqueness: true
-   validates :email, uniqueness: true
+   
+  
+   
+  
    validate :end_date_after_start_date?
    def end_date_after_start_date?
     if end_date.present?
