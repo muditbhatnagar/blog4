@@ -10,15 +10,6 @@
  
   <% @user_region.each do |user_region|%>
     <tr>
-     
-      
-
-       <td>
-        <% if user_region.user_id.present?%>
-         <%= user_region.user_region.try(:first_name)%>
-        <% end %>
-      </td>
-      
 
        <% if user_region.region_id.present? %>
         <td><%= @region=Region.find(user_region.region_id).region_name %></td>

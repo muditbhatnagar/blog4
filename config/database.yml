@@ -1,21 +1,14 @@
 default: &default
   adapter: postgresql
-  encoding: utf8
-  reconnect: false
   pool: 5
-  secure_auth: false
-  database: blog4
-  username: root
-  password: root
+  username: 'root'
+  password: 'root'
+  timeout: 5000
+  host: 127.0.0.1
 
 development:
   <<: *default
-  database: blog4_db
-
-testing:
-  <<: *default
-  database: blog4_db
-
+  database: blog1_development
 production:
   <<: *default
-  database: blog4_db
+  database: blog1_production
